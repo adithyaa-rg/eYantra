@@ -13,7 +13,7 @@ T = int(sys.stdin.readline())
 
 # Check the constraints on T
 if 1 <= T <= 25:
-    l = []
+    list = []
     for i in range(T):
         # Take the n input
         input_n = int(sys.stdin.readline())
