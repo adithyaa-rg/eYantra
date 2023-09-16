@@ -8,32 +8,43 @@ Author:        e-Yantra Team - eYRC#HB#2008
 
 import sys
 
-# Take the T (test_cases) input
-T = int(sys.stdin.readline())
+def check_input(n):
+    """
+    This function checks the input and prints the required output
 
-# Check the constraints on T
-if 1 <= T <= 25:
-    list = []
-    for i in range(T):
-        # Take the n input
-        input_n = int(sys.stdin.readline())
+    Parameters:
+    n (int): The number of elements in the list
 
-        # Check the constraints on n
-        if 0 <= input_n <= 100:
-            l+=[input_n]
+    Returns:
+    None
+
+    Example:
+    >>> check_input(5)
+    3 1 4 9 8
+    """
+
+    # Initializing a list
+    temp_list = []
+
+    # Iterating over the range of n
+    for i in range(n):
+        # Checking the conditions and add to list
+        if i == 0:
+            temp_list.append(i+3)
+        elif i%2 == 0:
+            temp_list.append(2*i)
         else:
-            break
+            temp_list.append(i**2)
+    print(*temp_list)
 
-    # Making the lists
-    for i in l:
-        temp_list = []
-        for j in range(i):
+# Calling the main function
+if __name__== '__main__':
 
-            # Check the conditions and add to list
-            if j == 0:
-                temp_list += [j+3]
-            elif j%2 == 0:
-                temp_list += [2*j]
-            else:
-                temp_list += [j**2]
-        print(*temp_list)
+    # Taking in the number of testcases
+    test_cases = int(input())
+
+    # Iterating over the testcases
+    for _ in range(test_cases):  
+
+        input_number = int(sys.stdin.readline())
+        check_input(input_number)

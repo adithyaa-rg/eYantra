@@ -5,36 +5,39 @@ Created:       14/09/2023
 Last Modified: 14/09/2023
 Author:        e-Yantra Team - eYRC#HB#2008
 '''
-
-# Take the input for the palindromes
-def palindrome_input(num_inputs):
-    word_array = []
-    for i in range(num_inputs):
-        input_user = input()
-
-        # Checking for the length constraint
-        if len(input_user) < 2 or len(input_user)>100:
-            break
-        word_array += []
-    return word_array
-
 # Checking for the palindromes
-def palindrome_check(word_array):
-    for i in word_array:
-        if i == i[-1::-1]:
-            print('It is a palindrome')
-        else:
-            print('It is not a palindrome')
+def palindrome_check(string):
+    """
+    This function checks if the string is a palindrome or not
+
+    Parameters:
+    string (str): The string to be checked
+
+    Returns:
+    None
+
+    Example:
+    >>> palindrome_check('racecar')
+    It is a palindrome
+    """
+
+    # Check if the string is a palindrome, by checking if the string is equal to its reverse    
+    if string == string[::-1]:
+        print('It is a palindrome')
+    else:
+        print('It is not a palindrome')
 
 # Call the MAIN function
 if __name__== '__main__':
 
-    # Take in T - number of inputs
-    num_inputs = int(input())
+    # Take in T - number of testcases
+    test_cases = int(input())
 
-    # Checking the constraints for number of inputs
-    if 1 <= num_inputs <= 100:
+    # Iterate over the testcases
+    for _ in range(test_cases):  
 
-        # Get the word array and check for palindrome
-        word_array = palindrome_input(num_inputs)
-        palindrome_check(word_array)
+        # Take in the string  
+        string = input()
+
+        # Call the function to check for palindrome
+        palindrome_check(string)
