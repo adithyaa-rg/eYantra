@@ -7,6 +7,16 @@ Author:        e-Yantra Team
 '''
 
 def perform_operations(n, lis):
+    """
+    This function performs the required operations as specified in the question
+
+    Parameters:
+    n (int): The number of elements in the list
+    lis (list): The list of numbers
+
+    Returns:
+    None
+    """
 
     list_1 = reversed(lis)
     list_2 = map (lambda x: x + 3, lis[3::3])
@@ -27,7 +37,11 @@ if __name__ == '__main__':
 
     for _ in range(test_cases):    
 
+        # Taking input of n
         n = int(input())
+
+        # Taking input of the list
         numbers = list(map(int, input().split()))
 
+        # Calling the function
         perform_operations(n, numbers)

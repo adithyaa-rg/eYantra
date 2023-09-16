@@ -11,13 +11,25 @@ import sys, os, math
 
 # Function to calculate Euclidean distance between two points
 def compute_distance(x1, y1, x2, y2):
+    """
+    This function calculates the Euclidean distance between two points
+
+    Parameters:
+    x1 (int): x-coordinate of first point
+    y1 (int): y-coordinate of first point
+    x2 (int): x-coordinate of second point
+    y2 (int): y-coordinate of second point
+
+    Returns:
+    None
+
+    """
 
     # Using formula for euclidean distance between two points in plane
     distance = math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
 
     # Using f-string to print up to two decimal places
     print(f"{distance:.2f}")
-
 
 # Main function
 if __name__ == '__main__':

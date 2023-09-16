@@ -6,16 +6,25 @@ Last Modified: 27/09/2021
 Author:        e-Yantra Team
 '''
 
-# Function to generate the A.P. series
-def find_maximum(n, dictionary):
+# Function to print the maximum marks students
+def find_maximum(n, marks_dictionary):
+    """
+    This function prints the students with maximum marks
 
-    maximum = max(dictionary.values())
+    Parameters:
+    n (int): The number of students
+
+    Returns:
+    None
+    """
+
+    maximum = max(marks_dictionary.values())
 
     students_list = []
 
-    for key, value in dictionary.items():
-        if value == maximum:
-            students_list.append(key)
+    for student, marks in marks_dictionary.items():
+        if marks == maximum:
+            students_list.append(student)
 
     sorted(students_list)
     print(*students_list, sep = "\n")
@@ -28,12 +37,13 @@ if __name__ == '__main__':
 
     for _ in range(test_cases):    
 
+        # Taking input of n
         n = int(input())
-        dictionary = {}
+        marks_dictionary = {}
 
+        # Taking input of key and value
         for _ in range(n):
-
-            key, value = input().split()
-            dictionary[key] = float(value)
+            student, marks = input().split()
+            marks_dictionary[student] = float(marks)
         
-        find_maximum(n, dictionary)
+        find_maximum(n, marks_dictionary)

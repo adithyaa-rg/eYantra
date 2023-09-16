@@ -11,6 +11,17 @@ from functools import reduce
 
 # Function to generate the A.P. series
 def generate_AP(a1, d, n):
+    """
+    This function generates the A.P. series
+
+    Parameters:
+    a1 (int): First term of the A.P. series
+    d (int): Common difference of the A.P. series
+    n (int): Number of terms in the A.P. series
+
+    Returns:
+    AP_series (list): A.P. series
+    """
 
     AP_series = [a1]
 
@@ -26,14 +37,12 @@ if __name__ == '__main__':
     # take the T (test_cases) input
     test_cases = int(input())
 
-    # Write the code here to take the a1, d and n values
-
     for _ in range(test_cases):    
 
+        # Taking input of a1, d, n
         a1, d, n = map(int, input().split())
 
         # Generating the AP series
-
         AP_series = generate_AP(a1, d, n)
         print(*AP_series, sep = " ")
 

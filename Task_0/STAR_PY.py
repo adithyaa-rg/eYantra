@@ -6,38 +6,36 @@ Last Modified: 14/09/2023
 Author:        e-Yantra Team - eYRC#HB#2008
 '''
 
-# Take the input for the no of rows
-def star_input(num_inputs):
-    len_array = []
-    for i in range(num_inputs):
-        input_user = int(input())
-
-        # Checking for the length constraint
-        if input_user < 1 or input_user>100:
-            break
-        len_array += [input_user]
-    return len_array
-
 # Print rows
-def star_print(len_array):
-    for i in len_array:
-        for j in range(-i,0,-1):
-            for k in range(j):
-                if k%5 == 0:
-                    print("#",end = '')
-                else:
-                    print("*",end = '')
-            print()
+def star_print(n):
+    """
+    This function prints the required pattern
+
+    Parameters:
+    n (int): The number of rows
+
+    Returns:
+    None
+
+    """
+    
+    # Iterate over the range of n
+    for j in range(n, 0, -1):
+        for k in range(1, j + 1):
+            if k%5 == 0:
+                print("#",end = '')
+            else:
+                print("*",end = '')
+        print()
 
 # Call the MAIN function
 if __name__== '__main__':
 
-    # Take in T - number of inputs
-    num_inputs = int(input())
+    # Taking in number of testcases
+    test_cases = int(input())
 
-    # Checking the constraints for number of inputs
-    if 1 <= num_inputs <= 25:
+    for _ in range(test_cases):
 
-        # Get the word array and check for palindrome
-        len_array = star_input(num_inputs)
-        star_print(len_array)
+        # Take in the number
+        number_of_lines = int(input())
+        star_print(number_of_lines)
