@@ -6,7 +6,7 @@
     Author:        e-Yantra Team
     '''
 
-    # Function to calculate Euclidean distance between two points
+    # Function to convert decimal number to binary
     def dec_to_binary(n):
 
         if (n == 0):
