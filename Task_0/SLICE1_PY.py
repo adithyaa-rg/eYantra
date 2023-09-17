@@ -13,7 +13,7 @@ def perform_operations(n, lis):
     ---
     This function performs the required operations as specified in the question
 
-    Parameters:
+    Input Arguments:
     ---
     n (int): The number of elements in the list
     lis (list): The list of numbers

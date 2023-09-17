@@ -1,22 +1,30 @@
-'''
-This script is code stub for CodeChef problem code PAL_PY
-Filename:      STAR_PY.py
-Created:       14/09/2023
-Last Modified: 14/09/2023
-Author:        e-Yantra Team - eYRC#HB#2008
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Adithyaa RG
+# Filename:         STAR_PY.py
+# Functions:        star_print
+# Global variables: test_cases, number_of_lines
 '''
 
 # Print rows
 def star_print(n):
     """
+    Purpose:
+    ---
     This function prints the required pattern
 
-    Parameters:
+    Input Arguments:
+    ---
     n (int): The number of rows
 
     Returns:
+    ---
     None
 
+    Example call:
+    ---
+    star_print(15)
     """
     
     # Iterate over the range of n

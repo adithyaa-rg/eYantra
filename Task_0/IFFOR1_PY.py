@@ -14,7 +14,7 @@ def check_input(n):
     ---
     This function checks the input and prints the required output
 
-    Parameters:
+    Input Arguments:
     ---
     n (int): The number of elements in the list
 

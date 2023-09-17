@@ -17,7 +17,7 @@ def compute_distance(x1, y1, x2, y2):
     ---
     This function calculates the Euclidean distance between two points
 
-    Parameters:
+    Input Arguments:
     ---
     x1 (int): x-coordinate of first point
     y1 (int): y-coordinate of first point

@@ -28,7 +28,7 @@ class Inventory:
         ---
         The constructor for Inventory class
 
-        Parameters:
+        Input Arguments:
         ---
         inventory (dict): The dictionary containing the inventory
 

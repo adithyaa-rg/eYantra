@@ -13,7 +13,7 @@ def palindrome_check(string):
     ---
     This function checks if the string is a palindrome or not
 
-    Parameters:
+    Input Arguments:
     ---
     string (str): The string to be checked
 

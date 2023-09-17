@@ -17,7 +17,7 @@ def generate_AP(a1, d, n):
     ---
     This function generates the A.P. series
 
-    Parameters:
+    Input Arguments:
     ---
     a1 (int): First term of the A.P. series
     d (int): Common difference of the A.P. series

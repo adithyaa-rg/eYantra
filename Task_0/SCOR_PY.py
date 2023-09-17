@@ -14,7 +14,7 @@ def find_maximum(n, marks_dictionary):
     ---
     This function prints the students with maximum marks
 
-    Parameters:
+    Input Arguments:
     ---
     n (int): The number of students
     marks_dictionary: Dictionary of marks
