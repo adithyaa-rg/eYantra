@@ -1,9 +1,10 @@
-'''
-This script is code stub for CodeChef problem code DIST1_PY
-Filename:      DIST1_PY_solution.py
-Created:       27/09/2021
-Last Modified: 27/09/2021
-Author:        e-Yantra Team
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Haricharan B
+# Filename:         DIST1_PY.py
+# Functions:        compute_distance
+# Global variables: test_cases, x1, y1, x2, y2
 '''
  
 # Importing required modules
@@ -12,17 +13,24 @@ import sys, os, math
 # Function to calculate Euclidean distance between two points
 def compute_distance(x1, y1, x2, y2):
     """
+    Purpose:
+    ---
     This function calculates the Euclidean distance between two points
 
     Parameters:
+    ---
     x1 (int): x-coordinate of first point
     y1 (int): y-coordinate of first point
     x2 (int): x-coordinate of second point
     y2 (int): y-coordinate of second point
 
     Returns:
+    ---
     None
 
+    Example call:
+    ---
+    compute_distance(5,6,7,8)
     """
 
     # Using formula for euclidean distance between two points in plane

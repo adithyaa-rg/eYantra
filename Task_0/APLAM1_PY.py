@@ -1,9 +1,10 @@
-'''
-This script is code stub for CodeChef problem code APLAM1_PY
-Filename:      APLAM1_PY_solution.py
-Created:       27/09/2021
-Last Modified: 27/09/2021
-Author:        e-Yantra Team
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Haricharan B
+# Filename:         APLAM1_PY.py
+# Functions:        generate_AP
+# Global variables: test_cases, a1, d, n, AP_series, sqr_AP_series, sum_sqr_AP_series
 '''
 
 # Import reduce module
@@ -12,15 +13,22 @@ from functools import reduce
 # Function to generate the A.P. series
 def generate_AP(a1, d, n):
     """
+    Purpose:
+    ---
     This function generates the A.P. series
 
     Parameters:
+    ---
     a1 (int): First term of the A.P. series
     d (int): Common difference of the A.P. series
     n (int): Number of terms in the A.P. series
 
     Returns:
+    ---
     AP_series (list): A.P. series
+
+    Example call:
+    generate_AP(1, 2, 3)
     """
 
     AP_series = [a1]

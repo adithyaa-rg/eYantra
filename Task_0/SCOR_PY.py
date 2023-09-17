@@ -1,21 +1,31 @@
-'''
-This script is code stub for CodeChef problem code APLAM1_PY
-Filename:      APLAM1_PY_solution.py
-Created:       27/09/2021
-Last Modified: 27/09/2021
-Author:        e-Yantra Team
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Haricharan B
+# Filename:         SCOR_PY.py
+# Functions:        find_maximum
+# Global variables: test_cases, n, marks_dictionary, student, marks
 '''
 
 # Function to print the maximum marks students
 def find_maximum(n, marks_dictionary):
     """
+    Purpose:
+    ---
     This function prints the students with maximum marks
 
     Parameters:
+    ---
     n (int): The number of students
+    marks_dictionary: Dictionary of marks
 
     Returns:
+    ---
     None
+
+    Example call:
+    ---
+    find_maximum(5, {}"A" : 10, "B" : 20.5})
     """
 
     maximum = max(marks_dictionary.values())

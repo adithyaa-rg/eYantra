@@ -1,32 +1,44 @@
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Haricharan B
+# Filename:         INV_PY.py
+# Functions:        Inventory.__init__, Inventory.add, Inventory.delete
+# Global variables: test_cases, n, items_dictionary, item_name, quantity, inventory, m, type_name, item_name, quantity
 '''
-This script is code stub for CodeChef problem code APLAM1_PY
-Filename:      APLAM1_PY_solution.py
-Created:       27/09/2021
-Last Modified: 27/09/2021
-Author:        e-Yantra Team
-'''
-
 class Inventory:
     """
+    Purpose:
+    ---
     This class is used to store the inventory of a shop
 
     Attributes:
+    ---
     inventory (dict): The dictionary containing the inventory
 
     Methods:
+    ---
     add(item_name, value): Adds the item to the inventory
     delete(item_name, value): Deletes the item from the inventory
     """
 
     def __init__(self, inventory = {}):
         """
+        Purpose:
+        ---
         The constructor for Inventory class
 
         Parameters:
+        ---
         inventory (dict): The dictionary containing the inventory
 
         Returns:
+        ---
         None
+
+        Example call:
+        ---
+        Inventory({'A' : 10, 'B' : 15})
         """
 
         self.inventory = inventory

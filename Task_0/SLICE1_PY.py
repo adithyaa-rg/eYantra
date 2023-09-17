@@ -1,21 +1,29 @@
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Haricharan B
+# Filename:         SLICE1_PY.py
+# Functions:        perform_operations
+# Global variables: test_cases, n, numbers
 '''
-This script is code stub for CodeChef problem code APLAM1_PY
-Filename:      APLAM1_PY_solution.py
-Created:       27/09/2021
-Last Modified: 27/09/2021
-Author:        e-Yantra Team
-'''
-
+ 
 def perform_operations(n, lis):
     """
+    Purpose:
+    ---
     This function performs the required operations as specified in the question
 
     Parameters:
+    ---
     n (int): The number of elements in the list
     lis (list): The list of numbers
 
     Returns:
+    ---
     None
+
+    Example call:
+    ---
     """
 
     list_1 = reversed(lis)

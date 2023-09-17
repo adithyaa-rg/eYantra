@@ -1,24 +1,29 @@
-'''
-This script is code stub for CodeChef problem code PAL_PY
-Filename:      PAL_PY.py
-Created:       14/09/2023
-Last Modified: 14/09/2023
-Author:        e-Yantra Team - eYRC#HB#2008
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Adithyaa RG
+# Filename:         PAL_PY.py
+# Functions:        palindrome_check
+# Global variables: test_cases, string
 '''
 # Checking for the palindromes
 def palindrome_check(string):
     """
+    Purpose:
+    ---
     This function checks if the string is a palindrome or not
 
     Parameters:
+    ---
     string (str): The string to be checked
 
     Returns:
+    ---
     None
 
-    Example:
-    >>> palindrome_check('racecar')
-    It is a palindrome
+    Example call:
+    ---
+    palindrome_check('racecar')
     """
 
     # Check if the string is a palindrome, by checking if the string is equal to its reverse    

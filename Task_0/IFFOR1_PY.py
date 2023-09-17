@@ -1,26 +1,30 @@
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Adithyaa RG
+# Filename:         IFFOR1_PY.py
+# Functions:        check_input
+# Global variables: test_cases, input_number
 '''
-This script is code stub for CodeChef problem code IFFOR1_PY
-Filename:      IFFOR1_PY.py
-Created:       14/09/2023
-Last Modified: 14/09/2023
-Author:        e-Yantra Team - eYRC#HB#2008
-'''
-
 import sys
 
 def check_input(n):
     """
+    Purpose:
+    ---
     This function checks the input and prints the required output
 
     Parameters:
+    ---
     n (int): The number of elements in the list
 
     Returns:
+    ---
     None
 
-    Example:
-    >>> check_input(5)
-    3 1 4 9 8
+    Example call:
+    ---
+    check_input(5)
     """
 
     # Initializing a list
