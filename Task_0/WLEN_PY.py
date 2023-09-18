@@ -6,7 +6,9 @@
 # Functions:        count_words
 # Global variables: test_cases, string
 '''
- 
+
+import sys 
+
 # Function to count number of words
 def count_words(string):
     """
