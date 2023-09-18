@@ -27,6 +27,7 @@ def palindrome_check(string):
     """
 
     # Check if the string is a palindrome, by checking if the string is equal to its reverse    
+    string = string.lower()
     if string == string[::-1]:
         print('It is a palindrome')
     else:

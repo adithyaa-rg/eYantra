@@ -36,7 +36,7 @@ def find_maximum(n, marks_dictionary):
         if marks == maximum:
             students_list.append(student)
 
-    sorted(students_list)
+    students_list = sorted(students_list)
     print(*students_list, sep = "\n")
 
 # Main function
