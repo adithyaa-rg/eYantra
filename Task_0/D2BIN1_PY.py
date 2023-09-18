@@ -49,4 +49,4 @@ if __name__ == '__main__':
 
         # Once you have the n value, call the dec_to_binary function to find the binary equivalent of 'n' in 8-bit format
         bin_num = dec_to_binary(n)
-        print(bin_num)
+        print(str(bin_num).zfill(8))
