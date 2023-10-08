@@ -10,11 +10,49 @@ import numpy as np
 
 class HBTask1BController(Node):
 
+    """
+    This is the controller for Task 1B
+    
+    Attributes:
+
+        cur_pose: Current pose of the robot
+        goal: Dictionary containing the goal pose
+        Kp_pos: Proportional gain for position
+        Kp_angle: Proportional gain for angle
+        cli: Client for the "next_goal" service
+        req: Request object for the "next_goal" service
+        index: Index of the goal pose in the list of goal poses
+        future: Future object for the "next_goal" service
+        flag: Flag to check if the goal pose is the last goal pose in the list of goal poses
+
+    Methods:
+            
+        send_request: Sends the request to the "next_goal" service
+        odom_callback: Callback function for the subscriber to the "/odom" topic
+        controller: Function to implement the P controller and publish the Twist message    
+
+    """
+
+
     def __init__(self):
-        super().__init__('hb_task1b_controller')
         
+        """
+        The constructor for HBTask1BController class.
+        It initializes the node, creates a publisher and a subscriber.
+
+        Parameters:
+            None
+
+        Returns:
+            None
+
+        """
+
+
+        super().__init__('hb_task1b_controller')
+
+        # Create a subscriber to the "/odom" topic and set the callback to self.odom_callback        
         self.subscription = self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
-        self.subscription
         self.publisher = self.create_publisher(Twist, '/cmd_vel',10)
 
         # x, y, theta
@@ -29,7 +67,6 @@ class HBTask1BController(Node):
         # For ex: x_d, y_d, theta_d (in **meters** and **radians**) for defining desired goal-pose.
         # and also Kp values for the P Controller
 
-
         # client for the "next_goal" service
 
         # TODO 
@@ -38,6 +75,18 @@ class HBTask1BController(Node):
         self.index = 0
 
     def send_request(self, index):
+
+        """
+        Sends the request to the "next_goal" service
+
+        Parameters:
+            index: Index of the goal pose in the list of goal poses
+
+        Returns:
+            None
+
+        """
+
         self.req.request_goal = index
         self.future = self.cli.call_async(self.req)
         self.get_logger().info(f"Request sent: {self.req.request_goal}")
@@ -47,9 +96,22 @@ class HBTask1BController(Node):
         return self.future.result()
     
     def odom_callback(self,msg = Odometry()):
+
+        """
+        Callback function for the subscriber to the "/odom" topic
+
+        Parameters:
+            msg: Odometry message recieved from the subscriber
+
+        Returns:
+            None
+
+        """
+
+        # Initializing pose
         pose1 = Odometry()
         pose1.pose.pose.orientation
-    
+ 
         orientation = euler_from_quaternion([msg.pose.pose.orientation.x,msg.pose.pose.orientation.y,msg.pose.pose.orientation.z,msg.pose.pose.orientation.w])
         #self.get_logger().info(f"{orientation}")
         self.cur_pose[0] = msg.pose.pose.position.x
@@ -58,14 +120,29 @@ class HBTask1BController(Node):
         # self.get_logger().info(f'x = {self.cur_pose[0]}, y = {self.cur_pose[1]}, theta = {self.cur_pose[2]}')
 
     def controller(self):
+
+        """
+        Function to implement the P controller and publish the Twist message
+
+        Parameters:
+            None
+
+        Returns:
+            None
+
+        """
+
+        # Goal pose
         self.goal_pose = np.array([self.goal['x_goal'], self.goal['y_goal'], self.goal['theta_goal']])
 
+        # Defining the error vector
         err = self.goal_pose - self.cur_pose
         pos_err = np.linalg.norm(err[0:2])
         angle_err = err[-1] 
         self.w = self.Kp_angle * angle_err 
         # Angular velocity used to reach goal orientation only. Indipendent of position/linear velocity
 
+        # Defining global velocity vector
         v_global = self.Kp_pos * pos_err #magnitude of velocity based on error in position (euler distance)
         if v_global > 10:
             v_global = 10
@@ -80,12 +157,14 @@ class HBTask1BController(Node):
         
         # self.get_logger().info(f"v global = {v_global}, rot angle = {rot_angle}")
         
+        # Resolving global velocity vector into local frame
         v_local_resolved = v_global * np.array([np.cos(-rot_angle), np.sin(-rot_angle)])
         self.v_x = v_local_resolved[0]
         self.v_y = v_local_resolved[1]
 
         # self.get_logger().info(f"v_x = {self.v_x}, v_y = {self.v_y}, w = {self.w}")
 
+        # Publish the message
         publish_msg = Twist()
         publish_msg.linear.x = self.v_x
         publish_msg.linear.y = self.v_y
@@ -94,6 +173,7 @@ class HBTask1BController(Node):
         
         
 def main(args=None):
+    
     rclpy.init(args=args)
 
     # Create an instance of the EbotController class
