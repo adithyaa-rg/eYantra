@@ -67,6 +67,8 @@ class HBTask1BController(Node):
         # Angular velocity used to reach goal orientation only. Indipendent of position/linear velocity
 
         v_global = self.Kp_pos * pos_err #magnitude of velocity based on error in position (euler distance)
+        if v_global > 10:
+            v_global = 10
         theta = np.arctan2(err[1],err[0]) #angle of vector from cur_position to goal_position
         rot_angle = self.cur_pose[-1] - theta # angle to rotate the global vector to the local frame
         # self.get_logger().info(f"rot_angle = {rot_angle}")
