@@ -83,9 +83,13 @@ class TurtleControlNode(Node):
             # Calculating the angular speed
             self.get_logger().info("Drawing Circle 1")
             angular_speed = speed/radius
+
+            # Initializing the current angle and the angle at the start of the circle
             theta_0 = self.current_pose.theta
             theta = 0.0
-            rate = self.create_rate(10) #rate at which the controller runs
+
+            # Rate at which the controller runs
+            rate = self.create_rate(10)
 
             # Looping until the turtle completes one circle
             while theta < 2*np.pi:
@@ -107,7 +111,7 @@ class TurtleControlNode(Node):
             self.get_logger().info("Waiting for initial pose...")
             rclpy.spin_once(self)
 
-
+# Definition the main function
 def main(args = None):
 
     rclpy.init(args=args)
@@ -117,5 +121,6 @@ def main(args = None):
     turtle_control.draw_circle(radius = 1.0, speed = 2.0)
     rclpy.shutdown()
 
+# Call the main function
 if __name__ == '__main__':
     main()
