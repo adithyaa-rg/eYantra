@@ -26,11 +26,12 @@
         palindrome_check('racecar')
         """
 
-        # Check if the string is a palindrome, by checking if the string is equal to its reverse    
-        if string == string[::-1]:
-            print('It is a palindrome')
-        else:
-            print('It is not a palindrome')
+    # Check if the string is a palindrome, by checking if the string is equal to its reverse    
+    string = string.lower()
+    if string == string[::-1]:
+        print('It is a palindrome')
+    else:
+        print('It is not a palindrome')
 
     # Call the MAIN function
     if __name__== '__main__':

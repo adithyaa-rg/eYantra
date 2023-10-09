@@ -37,7 +37,7 @@ def compute_distance(x1, y1, x2, y2):
     distance = math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
 
     # Using f-string to print up to two decimal places
-    print(f"{distance:.2f}")
+    print(f"Distance: {distance:.2f}")
 
 # Main function
 if __name__ == '__main__':
