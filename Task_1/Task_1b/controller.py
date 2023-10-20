@@ -1,3 +1,13 @@
+''''
+# Team ID:          eYRC#HB#2008
+# Theme:            Hologlyph Bots
+# Author List:      Tripan Dham, Adithyaa, Leon, Haricharan
+# Filename:         controller.py
+# Functions:        HBTask1BController, send_request, odom_callback, controller
+# Global variables: ebot_controller
+'''
+
+
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist

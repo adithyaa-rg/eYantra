@@ -1,0 +1,39 @@
+[0.461s] Invoking command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[1.019s] Invoked command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[1.073s] Invoking command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot
+[1.093s] -- Install configuration: ""
+[1.093s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch
+[1.093s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch/multi_bot_spawn.launch.py
+[1.096s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch/Spawn_bot.launch.py
+[1.096s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes
+[1.096s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.jpg
+[1.098s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.jpg
+[1.099s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.jpg.001.jpg
+[1.099s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.dae
+[1.099s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.dae
+[1.099s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/wheel.stl
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.dae
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.jpg.001.jpg
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.jpg.001.jpg
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.jpg
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_2.urdf.xacro
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/materials.xacro
+[1.100s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_3.urdf.xacro
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_1.urdf.xacro
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/package_run_dependencies/hb_bot
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/parent_prefix_path/hb_bot
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/ament_prefix_path.sh
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/ament_prefix_path.dsv
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/path.sh
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/path.dsv
+[1.101s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.bash
+[1.117s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.sh
+[1.124s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.zsh
+[1.125s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.dsv
+[1.125s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.dsv
+[1.125s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/packages/hb_bot
+[1.125s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/cmake/hb_botConfig.cmake
+[1.125s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/cmake/hb_botConfig-version.cmake
+[1.125s] -- Up-to-date: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.xml
+[1.126s] Invoked command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot

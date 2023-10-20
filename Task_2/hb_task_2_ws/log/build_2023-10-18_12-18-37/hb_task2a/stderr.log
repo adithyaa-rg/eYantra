@@ -1,0 +1,5 @@
+  File "/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a/feedback.py", line 47
+    self.get_logger().info(f'Image converted : {cv_image.shape}}')
+                                                                 ^
+SyntaxError: f-string: single '}' is not allowed
+

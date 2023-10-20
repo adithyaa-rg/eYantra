@@ -1,0 +1,24 @@
+[1.110s] Invoking command in '/home/adi/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2a': PYTHONPATH=/home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/hb_task2a build --build-base /home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/build install --record /home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/install.log --single-version-externally-managed
+[1.406s] running egg_info
+[1.407s] writing ../../../build/hb_task2a/hb_task2a.egg-info/PKG-INFO
+[1.407s] writing dependency_links to ../../../build/hb_task2a/hb_task2a.egg-info/dependency_links.txt
+[1.407s] writing entry points to ../../../build/hb_task2a/hb_task2a.egg-info/entry_points.txt
+[1.407s] writing requirements to ../../../build/hb_task2a/hb_task2a.egg-info/requires.txt
+[1.407s] writing top-level names to ../../../build/hb_task2a/hb_task2a.egg-info/top_level.txt
+[1.410s] reading manifest file '../../../build/hb_task2a/hb_task2a.egg-info/SOURCES.txt'
+[1.410s] writing manifest file '../../../build/hb_task2a/hb_task2a.egg-info/SOURCES.txt'
+[1.410s] running build
+[1.410s] running build_py
+[1.410s] copying hb_task2a/feedback.py -> /home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/build/lib/hb_task2a
+[1.411s] running install
+[1.411s] running install_lib
+[1.411s] copying /home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/build/lib/hb_task2a/feedback.py -> /home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a
+[1.412s] byte-compiling /home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a/feedback.py to feedback.cpython-310.pyc
+[1.412s] running install_data
+[1.413s] running install_egg_info
+[1.418s] removing '/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a-0.0.0-py3.10.egg-info' (and everything under it)
+[1.419s] Copying ../../../build/hb_task2a/hb_task2a.egg-info to /home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a-0.0.0-py3.10.egg-info
+[1.421s] running install_scripts
+[1.437s] Installing feedback script to /home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[1.437s] writing list of installed files to '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/install.log'
+[1.464s] Invoked command in '/home/adi/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2a' returned '0': PYTHONPATH=/home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/hb_task2a build --build-base /home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/build install --record /home/adi/eyrc_hb/hb_task_2_ws/build/hb_task2a/install.log --single-version-externally-managed

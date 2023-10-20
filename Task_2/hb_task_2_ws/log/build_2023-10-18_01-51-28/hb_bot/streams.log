@@ -1,0 +1,82 @@
+[0.323s] Invoking command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/adi/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DCMAKE_INSTALL_PREFIX=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot
+[0.684s] -- The C compiler identification is GNU 11.4.0
+[0.685s] -- The CXX compiler identification is GNU 11.4.0
+[0.685s] -- Detecting C compiler ABI info
+[0.685s] -- Detecting C compiler ABI info - done
+[0.685s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.685s] -- Detecting C compile features
+[0.685s] -- Detecting C compile features - done
+[0.686s] -- Detecting CXX compiler ABI info
+[0.686s] -- Detecting CXX compiler ABI info - done
+[0.686s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.686s] -- Detecting CXX compile features
+[0.686s] -- Detecting CXX compile features - done
+[0.686s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.698s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.796s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[0.849s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.854s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.862s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.878s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.906s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.988s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.991s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.100s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.128s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.181s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.191s] -- Looking for pthread.h
+[1.269s] -- Looking for pthread.h - found
+[1.270s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.347s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.348s] -- Found Threads: TRUE  
+[1.536s] -- Found rclpy: 3.3.10 (/opt/ros/humble/share/rclpy/cmake)
+[1.538s] -- Found urdf: 2.6.0 (/opt/ros/humble/share/urdf/cmake)
+[1.577s] -- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)
+[1.578s] -- Found ament_lint_auto: 0.12.8 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.676s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.677s] -- Added test 'lint_cmake' to check CMake code style
+[1.678s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.679s] -- Added test 'xmllint' to check XML markup files
+[1.680s] -- Configuring done
+[1.684s] -- Generating done
+[1.685s] -- Build files have been written to: /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot
+[1.722s] Invoked command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/adi/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DCMAKE_INSTALL_PREFIX=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot
+[1.723s] Invoking command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[1.766s] Invoked command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[1.794s] Invoking command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot
+[1.802s] -- Install configuration: ""
+[1.802s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch
+[1.802s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch/multi_bot_spawn.launch.py
+[1.802s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch/Spawn_bot.launch.py
+[1.802s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes
+[1.802s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.jpg
+[1.802s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.jpg
+[1.803s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.jpg.001.jpg
+[1.803s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.dae
+[1.804s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.dae
+[1.806s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/wheel.stl
+[1.811s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.dae
+[1.813s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.jpg.001.jpg
+[1.813s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.jpg.001.jpg
+[1.813s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.jpg
+[1.813s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf
+[1.814s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_2.urdf.xacro
+[1.814s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/materials.xacro
+[1.814s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_3.urdf.xacro
+[1.814s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_1.urdf.xacro
+[1.814s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/package_run_dependencies/hb_bot
+[1.814s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/parent_prefix_path/hb_bot
+[1.814s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/ament_prefix_path.sh
+[1.815s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/ament_prefix_path.dsv
+[1.815s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/path.sh
+[1.815s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/path.dsv
+[1.815s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.bash
+[1.815s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.sh
+[1.815s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.zsh
+[1.816s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.dsv
+[1.816s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.dsv
+[1.816s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/packages/hb_bot
+[1.816s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/cmake/hb_botConfig.cmake
+[1.816s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/cmake/hb_botConfig-version.cmake
+[1.816s] -- Installing: /home/adi/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.xml
+[1.818s] Invoked command in '/home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=/home/adi/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/adi/eyrc_hb/hb_task_2_ws/build/hb_bot
