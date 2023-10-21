@@ -32,6 +32,7 @@ from cv2 import aruco
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import pandas as pd
+from geometry_msgs.msg  import Pose2D
 # Import the required modules
 ##############################################################
 class ArUcoDetector(Node):
@@ -41,6 +42,8 @@ class ArUcoDetector(Node):
         self.bridge = CvBridge()
         camera_subscriber = self.create_subscription(Image,'/camera/image_raw',self.image_callback,10)
         camera_subscriber  # prevent unused variable warning
+        self.publisher_aruco = self.create_publisher(Pose2D, '/detected_aruco', 10)
+
 
         # Subscribe the topic /camera/image_raw
 
@@ -62,16 +65,33 @@ class ArUcoDetector(Node):
                 print("Error in Aruco Detection")
 
             for i,j in zip(corners,ids):
-                average_x = i.T[0].mean()
-                average_y = i.T[1].mean()
-                theta = np.arctan2(average_y, average_x)
+                if j[0] == 1:
+                    bot_x = i.T[0]
+                    bot_y = i.T[1]
+                    average_bot_x = bot_x.mean()
+                    average_bot_y = bot_y.mean()
+                    theta_bot = np.arctan2(bot_y[1]-bot_y[0], bot_x[1]-bot_x[0]+1e6)
+
+            for i,j in zip(corners,ids):
+                bot_x = i.T[0]
+                bot_y = i.T[1]
+                average_x = bot_x.mean()
+                average_y = bot_y.mean()
+                current_theta = np.arctan2(bot_y[1]-bot_y[0], bot_x[1]-bot_x[0])
                 # print(
                 #     f"ID = {j} \n",
                 #     f"Average X = {average_x} \n",
                 #     f"Average Y = {average_y} \n",
                 #     f"Theta = {theta} \n"
                 # )
-
+                if j[0] == 8:
+                    msg = Pose2D()
+                    msg.x = float(-(average_y - average_bot_y))
+                    msg.y = float(-(average_x - average_bot_x))
+                    msg.theta = float(current_theta - theta_bot)
+                    self.publisher_aruco.publish(msg)
+                    print(f"Published {msg}")
+                
                 new_image = cv2.putText(
                 img = cv_image,
                 text = f"id = {j[0]}",
@@ -91,6 +111,8 @@ class ArUcoDetector(Node):
                 
                 cv2.imshow("Image window", new_image)
                 cv2.waitKey(3)
+
+
                 
         except CvBridgeError as e:
             print(e)
