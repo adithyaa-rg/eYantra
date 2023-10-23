@@ -57,9 +57,9 @@ class HBController(Node):
     def __init__(self):
         super().__init__('hb_controller')
         self.goal = {
-            'x_goal': 100,
-            'y_goal': 100,
-            'theta_goal': 2
+            'x_goal': 5,
+            'y_goal': 5,
+            'theta_goal': 0
         }
         # Initialze Publisher and Subscriber
         # NOTE: You are strictly NOT-ALLOWED to use "cmd_vel" or "odom" topics in this task
@@ -111,12 +111,12 @@ class HBController(Node):
         return self.future.result()
     
     def find_velocity(self,msg):
-        x = msg.x
-        y = msg.y
-        theta = msg.theta
+        x = (msg.x - 250)/25
+        y = (msg.y - 250)/-25
+        theta = -(msg.theta - np.pi/4)
 
-        self.kP_linear = 0.1
-        self.kP_angular = 0.2
+        self.kP_linear = 45
+        self.kP_angular = 30
 
         global_pos_error_x = self.goal['x_goal'] - x
         global_pos_error_y = self.goal['y_goal'] - y

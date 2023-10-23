@@ -70,27 +70,28 @@ class ArUcoDetector(Node):
                     bot_y = i.T[1]
                     average_bot_x = bot_x.mean()
                     average_bot_y = bot_y.mean()
-                    theta_bot = np.arctan2(bot_y[1]-bot_y[0], bot_x[1]-bot_x[0]+1e6)
+                    theta_bot = np.arctan2(average_bot_y-bot_y[0], average_bot_x-bot_x[0]+1e-6)
+                    print(f"Calculated {theta_bot}")
 
             for i,j in zip(corners,ids):
                 bot_x = i.T[0]
                 bot_y = i.T[1]
                 average_x = bot_x.mean()
                 average_y = bot_y.mean()
-                current_theta = np.arctan2(bot_y[1]-bot_y[0], bot_x[1]-bot_x[0])
-                # print(
-                #     f"ID = {j} \n",
-                #     f"Average X = {average_x} \n",
-                #     f"Average Y = {average_y} \n",
-                #     f"Theta = {theta} \n"
-                # )
-                if j[0] == 8:
+                current_theta = np.arctan2(average_y-bot_y[0], average_x-bot_x[0]+1e-6)
+                print(f"Entering message")
+                if j[0] == 1:
                     msg = Pose2D()
-                    msg.x = float(-(average_y - average_bot_y))
-                    msg.y = float(-(average_x - average_bot_x))
-                    msg.theta = float(current_theta - theta_bot)
+                    # msg.y = float(-(average_y - average_bot_y))
+                    # msg.x = float(-(average_x - average_bot_x))
+                    # msg.theta = float(theta_bot[0] - current_theta[0])
+
+                    msg.x = float(average_x)
+                    msg.y = float(average_y)
+                    msg.theta = float(current_theta)
                     self.publisher_aruco.publish(msg)
-                    print(f"Published {msg}")
+                    print(f"Published message")
+                    
                 
                 new_image = cv2.putText(
                 img = cv_image,
