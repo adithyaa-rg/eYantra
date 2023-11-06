@@ -30,6 +30,7 @@
 
 import rclpy
 from rclpy.node import Node
+<<<<<<< HEAD
 # import time
 import math
 from tf_transformations import euler_from_quaternion
@@ -37,12 +38,19 @@ from my_robot_interfaces.msg import Goal
 import numpy as np
 from geometry_msgs.msg  import Pose2D
 from geometry_msgs.msg import Wrench     
+=======
+import time
+import math
+from tf_transformations import euler_from_quaternion
+from my_robot_interfaces.msg import Goal             
+>>>>>>> 41ed2e3e8d352b2aecc18c68bdfef0df411555b4
 
 
 class HBController(Node):
     def __init__(self):
         super().__init__('hb_controller')
         
+<<<<<<< HEAD
         self.goal = {'x_goal': [0.0, -5.0*25, 7.0*25], 'y_goal': [3.0*25, 5.0*25, 7.0*25], 'theta_goal': [0.0, 0.0, 0.0]}
         # Initialise the required variables
 
@@ -89,10 +97,35 @@ class HBController(Node):
         wheel_name = ['left', 'right', 'rear']
         self.wheel_publishers = [[self.create_publisher(Wrench, f'/hb_bot_{i}/{wheel_name[j]}_wheel_force', 10) for j in range(3)] for i in range(3)]
 
+=======
+
+        # Initialise the required variables
+        self.bot_1_x = []
+        self.bot_1_y = []
+        self.bot_1_theta = 0.0
+
+        # Initialze Publisher and Subscriber
+        # NOTE: You are strictly NOT-ALLOWED to use "cmd_vel" or "odom" topics in this task
+	    #	Use the below given topics to generate motion for the robot.
+	    #   /hb_bot_1/left_wheel_force,
+	    #   /hb_bot_1/right_wheel_force,
+	    #   /hb_bot_1/left_wheel_force
+
+        #Similar to this you can create subscribers for hb_bot_2 and hb_bot_3
+        self.subscription = self.create_subscription(
+            Goal,  
+            'hb_bot_1/goal',  
+            self.goalCallBack,  # Callback function to handle received messages
+            10  # QoS profile, here it's 10 which means a buffer size of 10 messages
+        )  
+
+        self.subscription  # Prevent unused variable warning
+>>>>>>> 41ed2e3e8d352b2aecc18c68bdfef0df411555b4
 
         # For maintaining control loop rate.
         self.rate = self.create_rate(100)
 
+<<<<<<< HEAD
     def find_velocity(self):
         x = (np.array([i.x for i in self.messages]) - 250)/25
         y = (np.array([i.y for i in self.messages]) - 250)/-25
@@ -129,6 +162,9 @@ class HBController(Node):
 
 
     def inverse_kinematics(self):
+=======
+    def inverse_kinematics():
+>>>>>>> 41ed2e3e8d352b2aecc18c68bdfef0df411555b4
         ############ ADD YOUR CODE HERE ############
 
         # INSTRUCTIONS & HELP : 
@@ -136,6 +172,7 @@ class HBController(Node):
         #	Process it further to find what proportions of that effort should be given to 3 individuals wheels !!
         #	Publish the calculated efforts to actuate robot by applying force vectors on provided topics
         ############################################
+<<<<<<< HEAD
         component_matrix = [[np.cos(self.alpha_1 + np.pi/2), np.cos(self.alpha_2 + np.pi/2), np.cos(self.alpha_3 + np.pi/2)],
                             [np.sin(self.alpha_1 + np.pi/2), np.sin(self.alpha_2 + np.pi/2), np.sin(self.alpha_3 + np.pi/2)],
                             [1, 1, 1]]
@@ -179,6 +216,14 @@ class HBController(Node):
 
     def store_msg_3(self, msg):
         self.messages[2] = msg
+=======
+        pass
+
+    def goalCallBack(self, msg):
+        self.bot_1_x = msg.x
+        self.bot_1_y = msg.y
+        self.bot_1_theta = msg.theta
+>>>>>>> 41ed2e3e8d352b2aecc18c68bdfef0df411555b4
 
 def main(args=None):
     rclpy.init(args=args)
@@ -190,7 +235,10 @@ def main(args=None):
 
         # Spin once to process callbacks
         rclpy.spin_once(hb_controller)
+<<<<<<< HEAD
         hb_controller.find_velocity()
+=======
+>>>>>>> 41ed2e3e8d352b2aecc18c68bdfef0df411555b4
     
     # Destroy the node and shut down ROS
     hb_controller.destroy_node()
