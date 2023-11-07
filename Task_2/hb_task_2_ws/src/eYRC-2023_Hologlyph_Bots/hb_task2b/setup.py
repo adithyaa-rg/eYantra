@@ -26,13 +26,8 @@ setup(
     entry_points={
         'console_scripts': [
              'controller = hb_task2b.bot_controller:main',
-<<<<<<< HEAD
              'feedback = hb_task2b.feedback2b:main',
              'nextgoalpub= hb_task2b.nextGoalPub:main'
-=======
-             'nextgoalpub= hb_task2b.nextGoalPub:main',
-             'feedback = hb_task2b.feedback:main'
->>>>>>> 41ed2e3e8d352b2aecc18c68bdfef0df411555b4
 
          ],
     },
