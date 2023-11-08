@@ -27,7 +27,7 @@
 
 
 ################### IMPORT MODULES #######################
-
+import time
 import rclpy
 from rclpy.node import Node
 # import time
@@ -39,19 +39,23 @@ from geometry_msgs.msg  import Pose2D
 from geometry_msgs.msg import Wrench     
 
 n = 3
+flag = 0
 
 class HBController(Node):
     def __init__(self):
         super().__init__('hb_controller')
         
-        print("LLLLLL")
-
-        self.goal = {'x_goal': [5, 0, -5], 'y_goal': [0, 5, 0], 'theta_goal': [1.57, 0, -1.57]}
         # Initialise the required variables
+        self.bot_x = [[], [], []]
+        self.bot_y = [[], [], []]
+        self.bot_theta = [[], [], []]
+        self.index = np.array([0, 0, 0])
 
-        # self.bot_x = [[],[],[]]
-        # self.bot_y = [[],[],[]]
-        # self.bot_theta = [0.0, 0.0, 0.0]
+        self.goal = {
+            'x_goal' : [0, 0, 0],
+            'y_goal' : [0, 0, 0],
+            'theta_goal' : [0, 0, 0]
+        }
 
         self.messages = [Pose2D(), Pose2D(), Pose2D()]
 
@@ -83,7 +87,7 @@ class HBController(Node):
         pose_subscriber_1  # prevent unused variable warning
 
         pose_subscriber_2 = self.create_subscription(Pose2D,'/detected_aruco_2',self.store_msg_2,10)
-        pose_subscriber_2  # prevent unused variable warning
+        pose_subscriber_2  # prevent unused variable warningcheck()
 
         pose_subscriber_3 = self.create_subscription(Pose2D,'/detected_aruco_3',self.store_msg_3,10)
         pose_subscriber_3  # prevent unused variable warning
@@ -91,7 +95,7 @@ class HBController(Node):
 
         wheel_name = ['right', 'left', 'rear']
         self.wheel_publishers = [[self.create_publisher(Wrench, f'/hb_bot_{j+1}/{wheel_name[i]}_wheel_force', 10) for j in range(n)] for i in range(n)]
-        print([[f'/hb_bot_{i}/{wheel_name[j]}_wheel_force' for i in range(n)] for j in range(n)])
+        # print([[f'/hb_bot_{i}/{wheel_name[j]}_wheel_force' for i in range(n)] for j in range(n)])
 
         # For maintaining control loop rate.
         self.rate = self.create_rate(100)
@@ -104,8 +108,6 @@ class HBController(Node):
         goal_x = (np.array(self.goal['x_goal']))
         goal_y = (np.array(self.goal['y_goal']))
         goal_theta = np.array(self.goal['theta_goal'])
-
-
 
         # print(goal_x, goal_y, goal_theta)
         self.kP_linear_x = 12.5
@@ -120,13 +122,13 @@ class HBController(Node):
         self.velocity_y = self.kP_linear_y*(-self.global_pos_error_x*np.sin(theta) + self.global_pos_error_y*np.cos(theta))
         self.velocity_theta = self.kP_angular*(self.theta_error)
 
-        print(f'Velocity X: {self.velocity_x}')
-        print(f'Velocity Y: {self.velocity_y}')
-        print(f'Velocity Theta: {self.velocity_theta}')
+        # print(f'Velocity X: {self.velocity_x}')
+        # print(f'Velocity Y: {self.velocity_y}')
+        # print(f'Velocity Theta: {self.velocity_theta}')
 
         collision_time = 1e0 #collision time of 1 second assumed
         collision_line = np.array([[x[i],x[i]+self.velocity_x[i]*collision_time, y[i],y[i]+self.velocity_y[i]*collision_time] for i in range(3)])
-        print(f"{collision_line=}")
+        # print(f"{collision_line=}")
 
         for i in range(3):
             for j in range(i+1,3):
@@ -135,10 +137,10 @@ class HBController(Node):
                 line2 = ((collision_line[j][0],collision_line[j][2]),
                          (collision_line[j][1],collision_line[j][3]))
                 
-                print(f"{line1=}")
-                print(f"{line2=}")
+                # print(f"{line1=}")
+                # print(f"{line2=}")
 
-                print(self.line_intersect(line1, line2))
+                # print(self.line_intersect(line1, line2))
                 if self.line_intersect(line1, line2):
                     self.velocity_x[j] = 0
                     self.velocity_y[j] = 0
@@ -147,6 +149,13 @@ class HBController(Node):
         # print(f'Velocity X: {self.velocity_x}')
         # print(f'Velocity Y: {self.velocity_y}')
         # print(f'Velocity Theta: {self.velocity_theta}')
+
+        self.subscription_1
+        self.subscription_2
+        self.subscription_3
+
+        self.check()
+        self.goal_update()
 
         self.alpha_1 = 30/180*np.pi
         self.alpha_2 = 150/180*np.pi
@@ -188,6 +197,7 @@ class HBController(Node):
                 self.wheel_publishers[i][j].publish(wheel[i][j])
 
     def goalCallBack_1(self, msg):
+        print(msg)
         self.bot_x[0] = np.array(msg.x)
         self.bot_y[0] = np.array(msg.y)
         self.bot_theta[0] = msg.theta
@@ -201,6 +211,8 @@ class HBController(Node):
         self.bot_x[2] = np.array(msg.x)
         self.bot_y[2] = np.array(msg.y)
         self.bot_theta[2] = msg.theta
+        flag = 1
+        
 
     def store_msg_1(self, msg):
         self.messages[0] = msg
@@ -210,6 +222,18 @@ class HBController(Node):
 
     def store_msg_3(self, msg):
         self.messages[2] = msg
+
+    def goal_update(self):
+        print("goal update is called")
+        # self.goal = {}
+
+        for i in range(0, n):
+            print(self.goal)
+            print(self.bot_x)
+            print(i, self.index[i])
+            self.goal["x_goal"][i] = self.bot_x[i][self.index[i]]
+            self.goal["y_goal"][i] = self.bot_y[i][self.index[i]]
+            self.goal["theta_goal"][i] = self.bot_theta[i]
 
     def check_sign(self, line_start, line_end, point):
         slope = (line_end[1] - line_start[1])/(line_end[0] - line_start[0])
@@ -228,18 +252,29 @@ class HBController(Node):
             opp_sides_line2 = 0
         return opp_sides_line2*opp_sides_line1
 
+        
+    def check (self):
+
+        for i in range(0, n):
+            if np.linalg.norm(np.array([self.global_pos_error_x[i], self.global_pos_error_y[i]])) < 0.2 and np.abs(self.theta_error[i]) < 0.1:
+                self.index[i] += 1
+        
+        self.index %= n
+
 def main(args=None):
     rclpy.init(args=args)
     
     hb_controller = HBController()
-       
+    rclpy.spin_once(hb_controller)
+    
     # Main loop
     while rclpy.ok():
 
         # Spin once to process callbacks
         rclpy.spin_once(hb_controller)
         hb_controller.find_velocity()
-    
+
+
     # Destroy the node and shut down ROS
     hb_controller.destroy_node()
     rclpy.shutdown()
