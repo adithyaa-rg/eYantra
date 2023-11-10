@@ -38,6 +38,15 @@ from geometry_msgs.msg  import Pose2D
 class ArUcoDetector(Node):
 
     def __init__(self):
+        """
+        Class constructor to set up the aruco detector node
+
+        Parameters:
+            None
+
+        Returns:
+            None
+        """
         super().__init__('ar_uco_detector')
         self.bridge = CvBridge()
         camera_subscriber = self.create_subscription(Image,'/camera/image_raw',self.image_callback,10)
@@ -53,10 +62,18 @@ class ArUcoDetector(Node):
 
 
     def image_callback(self, msg):
-        # self.get_logger().info(f'Image received {msg.height}x{msg.width}')
+        """
+        Callback function of subscribed topic and detection of aruco marker and publishing the bot coordinates
+
+        Parameters:
+            msg : Image
+                Image data from camera
+
+        Returns:
+            None
+        """
         try:
             cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-            # self.get_logger().info(f'Image converted : {cv_image.shape}') # 500x500x3
            
             aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_100)
             parameters =  aruco.DetectorParameters_create()
