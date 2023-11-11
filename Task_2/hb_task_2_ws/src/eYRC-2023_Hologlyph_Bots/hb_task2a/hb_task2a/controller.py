@@ -115,13 +115,13 @@ class HBController(Node):
         goal_y = (self.goal['y_goal'])/25
         goal_theta = self.goal['theta_goal']
 
-        self.kP_linear = 45
-        self.kP_angular = 30
-
         self.global_pos_error_x = goal_x - x
         self.global_pos_error_y = goal_y - y
         self.theta_error = goal_theta - theta
 
+        self.kP_linear = 75
+        self.kP_angular = 30
+        
         self.velocity_x = self.kP_linear*(self.global_pos_error_x*np.cos(theta) + self.global_pos_error_y*np.sin(theta))
         self.velocity_y = self.kP_linear*(-self.global_pos_error_x*np.sin(theta) + self.global_pos_error_y*np.cos(theta))
         self.velocity_theta = self.kP_angular*(self.theta_error)
